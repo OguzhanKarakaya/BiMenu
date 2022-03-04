@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bi Menu</string>
+
+    <string name="login_email_address">E-Mail Adresi</string>
+    <string name="login_password">Şifre</string>
+    <string name="register_phone_number">Telefon Numarası</string>
+
+    <!-- BUTTONS -->
+    <string name="btn_login">Giriş Yap</string>
+    <string name="btn_register">Üyelik Oluştur</string>
+    <string name="btn_complete">Tamamla</string>
+</resources>

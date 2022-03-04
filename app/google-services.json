@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "791363944979",
+    "project_id": "bi--menu",
+    "storage_bucket": "bi--menu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791363944979:android:6040ecee33a1672fec75e6",
+        "android_client_info": {
+          "package_name": "com.example.bimenu2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791363944979-7sepitb88kov0k9fbl8gpa6oaqq597qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVRBim8HtlGHOmF2uV7y-4yC6YHEhRIlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791363944979-7sepitb88kov0k9fbl8gpa6oaqq597qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
