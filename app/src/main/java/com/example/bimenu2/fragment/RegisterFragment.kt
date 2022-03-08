@@ -30,10 +30,19 @@ class RegisterFragment : Fragment() {
         binding.userModel = userModel
 
         binding.btnCompleteRegister.setOnClickListener {
-            onCompleteClicked()
+            //onCompleteClicked()
+            test()
         }
 
         return binding.root
+    }
+
+    private fun test() {
+        val reference = FirebaseDatabase.getInstance().reference
+        binding.userModel?.phoneNumber = binding.etUserPhoneNumber.text.toString()
+        reference.child(Constants.CUSTOMER_DATABASE)
+            .child(binding.etUserPhoneNumber.text.toString())
+            .setValue(binding.userModel)
     }
 
     private fun onCompleteClicked() {
@@ -44,7 +53,8 @@ class RegisterFragment : Fragment() {
             if (it.isSuccessful) {
                 val reference = FirebaseDatabase.getInstance().reference
                 binding.userModel?.phoneNumber = binding.etUserPhoneNumber.text.toString()
-                reference.child(Constants.CUSTOMER_DATABASE).child(binding.etUserPhoneNumber.text.toString()).setValue(binding.userModel)
+                reference.child(Constants.CUSTOMER_DATABASE)
+                    .child(binding.etUserPhoneNumber.text.toString()).setValue(binding.userModel)
             }
         }
     }
