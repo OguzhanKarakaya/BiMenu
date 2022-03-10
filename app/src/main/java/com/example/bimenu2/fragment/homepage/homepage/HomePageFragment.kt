@@ -31,7 +31,7 @@ class HomePageFragment : Fragment(),
 
         menuItem.optionName = "Hamburgerler"
         menuItem2.optionName = "Sıcak İçecekler"
-
+//test
         menuList.add(menuItem)
         menuList.add(menuItem2)
 
