@@ -5,5 +5,10 @@ data class OrderModel(
     var orderPrice: Double? = 0.0,
     var orderDate: String? = "",
     var orderTime: String? = "",
-    var restaurantName: String? = ""
-)
+    var restaurantName: String? = "",
+    var status: String? = ""
+) {
+    fun strOrderPrice(): String {
+        return "$orderPrice TL"
+    }
+}

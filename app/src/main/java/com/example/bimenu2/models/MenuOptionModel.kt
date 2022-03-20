@@ -1,7 +1,7 @@
 package com.example.bimenu2.models
 
 data class MenuOptionModel(
-    var menuSubOptionModel: MenuSubOptionModel? = null,
+    var restaurantId: String? = "",
     var optionName: String? = "",
-    var restaurantId: String? = ""
+    var menuSubOptionModel: ArrayList<MenuSubOptionModel>? = null
 )

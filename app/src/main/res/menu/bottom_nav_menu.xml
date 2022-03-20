@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigationHomePage"
+        android:id="@+id/homePageFragment"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Ana Sayfa" />
 
     <item
-        android:id="@+id/navigationOrders"
+        android:id="@+id/basketFragment"
         android:icon="@drawable/ic_baseline_star_border_24"
-        android:title="Siparişler" />
+        android:title="Sepet" />
 
     <item
-        android:id="@+id/navigationProfile"
-        android:icon="@drawable/ic_baseline_person_24"
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_baseline_star_border_24"
         android:title="Profil" />
 
 </menu>

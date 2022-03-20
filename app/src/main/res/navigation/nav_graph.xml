@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.bimenu2.fragment.homepage.HomePageFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_home_page">
+
+        <action
+            android:id="@+id/action_homePageFragment2_to_homePageDetailFragment"
+            app:destination="@id/homePageDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/homePageDetailFragment"
+        android:name="com.example.bimenu2.fragment.homepage.HomePageDetailFragment"
+        android:label="HomePageDetailFragment"
+        tools:layout="@layout/fragment_home_page_detail">
+
+        <argument
+            android:name="menuSubOptionModelList"
+            app:argType="com.example.bimenu2.models.MenuSubOptionModelList" />
+        <argument
+            android:name="toolbarTitle"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.example.bimenu2.fragment.basket.BasketFragment"
+        android:label="BasketFragment"
+        tools:layout="@layout/fragment_basket">
+
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.bimenu2.fragment.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+
+
+</navigation>

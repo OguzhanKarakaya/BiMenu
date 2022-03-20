@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.example.bimenu2.fragment.LoginFragment
 import com.example.bimenu2.R
 import com.example.bimenu2.databinding.ActivityLoginBinding
+import com.example.bimenu2.fragment.LoginFragment
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding

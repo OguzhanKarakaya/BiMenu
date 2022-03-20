@@ -1,47 +1,37 @@
 package com.example.bimenu2.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupWithNavController
 import com.example.bimenu2.R
 import com.example.bimenu2.databinding.ActivityHomePageBinding
-import com.example.bimenu2.fragment.homepage.homepage.HomePageFragment
-import com.example.bimenu2.fragment.homepage.OrderFragment
-import com.example.bimenu2.fragment.homepage.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomePageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomePageBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadFragment(HomePageFragment())
-        binding.bottomNavigation.setOnItemSelectedListener(mOnNavigationItemSelectedListener)
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        setupBottomNavMenu(navController)
     }
 
-    private val mOnNavigationItemSelectedListener =
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
-            var fragment: Fragment? = null
-            when (item.itemId) {
-                R.id.navigationHomePage -> fragment = HomePageFragment()
-                R.id.navigationOrders -> fragment = OrderFragment()
-                R.id.navigationProfile -> fragment = ProfileFragment()
-            }
-            loadFragment(fragment)
-        }
+    private fun setupBottomNavMenu(navController: NavController) {
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        bottomNav?.setupWithNavController(navController)
+    }
 
-    private fun loadFragment(fragment: Fragment?): Boolean {
-        if (fragment != null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.containerHomePage, fragment)
-                .commit()
-            return true
-        }
-        return false
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment)) || super.onOptionsItemSelected(item)
     }
 }

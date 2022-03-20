@@ -6,42 +6,45 @@
 
         <variable
             name="model"
-            type="com.example.bimenu2.models.MenuOptionModel" />
+            type="com.example.bimenu2.models.OrderModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcv"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:cardCornerRadius="8dp">
 
-        <RelativeLayout
-            android:id="@+id/relative"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/main_font_regular"
-                android:text="@{model.optionName}"
+                android:text="@{model.restaurantName}"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
-            <ImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/main_font_regular"
+                android:text="@{model.strOrderPrice()}"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-        </RelativeLayout>
+
+        </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 

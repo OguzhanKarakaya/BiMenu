@@ -42,7 +42,7 @@
                         android:fontFamily="@font/main_font_regular"
                         android:hint="@string/register_phone_number"
                         android:inputType="phone"
-                        android:text="@={userModel.phoneNumber}"
+                        android:text="5444130343"
                         android:textSize="15sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -62,7 +62,7 @@
                         android:fontFamily="@font/main_font_regular"
                         android:hint="@string/login_password"
                         android:inputType="numberPassword"
-                        android:text="@={userModel.password}"
+                        android:text="258258"
                         android:textSize="15sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>

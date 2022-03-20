@@ -1,0 +1,72 @@
+{
+  "CUSTOMER_DATABASE": {
+    "5423871114": {
+      "email": "emre@test.com",
+      "password": "258258",
+      "phoneNumber": "5423871114"
+    },
+    "5438181462": {
+      "email": "tayfun@test.com",
+      "password": "258258",
+      "phoneNumber": "5438181462"
+    },
+    "5444130343": {
+      "email": "test@test.com",
+      "password": "258258",
+      "phoneNumber": "5444130343"
+    }
+  },
+  "MENU_DATABASE": {
+    "Hangover12345": {
+      "Sıcak İçecekler": [
+        {
+          "name": "Americano",
+          "price": "16.50 ₺",
+          "description": "Espresso ve sıcak suyla hazırlanır.",
+          "imageUrl": "https://www.tchibo.com.tr/newmedia/page/img/5e54147ebb0dc076/image_match.jpg",
+          "id": "HangoverHotAmericano"
+        },
+        {
+          "name": "Latte",
+          "price": "18.50 ₺",
+          "description": "Espresso, süt ve süt köpüğüyle hazırlanır.",
+          "imageUrl": "https://www.tchibo.com.tr/newmedia/page/img/fd6af9fb186b0b34/image_classic.jpg",
+          "id": "HangoverHotLatte"
+        },
+        {
+          "name" : "Macchiato",
+          "price" : "20.00 ₺",
+          "description" : "Espresso, süt ve krema sütle hazırlanır.",
+          "imageUrl" : "https://image.shutterstock.com/image-photo/glass-hot-caramel-macchiato-coffee-260nw-539159449.jpg",
+          "id" : "HangoveMacchiato"
+        }
+      ],
+      "Soğuk İçecekler": [
+        {
+          "name": "Ice Americano",
+          "price": "16.50 ₺",
+          "description": "Espresso ve soğuk suyla hazırlanır.",
+          "imageUrl": "https://www.sofrakesesi.com/cdn/Iced-Americano.jpg",
+          "id": "HangoverHotAmericano"
+        },
+        {
+          "name": "Ice Latte",
+          "price": "18.50 ₺",
+          "description": "Espresso, süt, süt köpüğü ve buzla hazırlanır.",
+          "imageUrl": "https://thumbs.dreamstime.com/b/cold-brewed-iced-latte-coffee-showing-separate-layer-bottom-as-milk-top-coffee-shot-plastic-glass-oz-isolated-196983009.jpg",
+          "id": "HangoverHotLatte"
+        }
+      ]
+    }
+  },
+  "RESTAURANT_DATABASE": {
+    "Hangover12345": {
+      "restaurantId": "Hangover12345",
+      "restaurantName": "Hangover"
+    },
+    "KahveDunyasi12345": {
+      "restaurantId": "Hangover12345",
+      "restaurantName": "Kahve Dünyası"
+    }
+  }
+}
