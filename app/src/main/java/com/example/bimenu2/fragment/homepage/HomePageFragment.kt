@@ -1,6 +1,7 @@
 package com.example.bimenu2.fragment.homepage
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.example.bimenu2.Constants
 import com.example.bimenu2.R
 import com.example.bimenu2.adapter.HomePageAdapter
 import com.example.bimenu2.databinding.FragmentHomePageBinding
+import com.example.bimenu2.models.BasketModel
 import com.example.bimenu2.models.MenuOptionModel
 import com.example.bimenu2.models.MenuSubOptionModel
 import com.example.bimenu2.models.MenuSubOptionModelList
@@ -76,6 +78,9 @@ class HomePageFragment : Fragment(),
                 val menuJSONObj =
                     obj.getJSONObject(Constants.MENU_DATABASE).getJSONObject("Hangover12345")
 
+                val basketJSONArray =
+                    obj.getJSONObject(Constants.BASKET_DATABASE).getJSONArray("BASKET")
+
                 for (menuItems in 0 until menuJSONObj.length()) {
                     val menuList = ArrayList<MenuSubOptionModel>()
                     val menuItemKey = menuJSONObj.names().get(menuItems)
@@ -93,6 +98,17 @@ class HomePageFragment : Fragment(),
                     menuOptionModel.optionName = it
                     menuOptionModelList.add(menuOptionModel)
                 }
+
+                for (basketItems in 0 until basketJSONArray.length()) {
+                    val gson = Gson()
+                    val type : Type = object : TypeToken<MenuSubOptionModel?>() {}.type
+                    val menuSOM: MenuSubOptionModel = gson.fromJson(basketJSONArray[basketItems].toString(), type)
+                    val basketModel = BasketModel()
+                    basketModel.menuSubOption = menuSOM
+                    basketList.add(basketModel)
+                }
+
+                Log.i("TAG", "getDBObjects: ")
             }
             fillRecycler()
         } catch (e: JSONException) {
@@ -103,16 +119,20 @@ class HomePageFragment : Fragment(),
     private fun loadJSONFromAsset(): String? {
         var json: String? = null
         json = try {
-            val `is` = requireActivity().assets.open("menu_db.json")
-            val size = `is`.available()
+            val inputStream = requireActivity().assets.open("menu_db.json")
+            val size = inputStream.available()
             val buffer = ByteArray(size)
-            `is`.read(buffer)
-            `is`.close()
+            inputStream.read(buffer)
+            inputStream.close()
             String(buffer, charset("UTF-8"))
         } catch (ex: IOException) {
             ex.printStackTrace()
             return null
         }
         return json
+    }
+
+    companion object {
+        val basketList = ArrayList<BasketModel>()
     }
 }

@@ -34,11 +34,11 @@
           "id": "HangoverHotLatte"
         },
         {
-          "name" : "Macchiato",
-          "price" : "20.00 ₺",
-          "description" : "Espresso, süt ve krema sütle hazırlanır.",
-          "imageUrl" : "https://image.shutterstock.com/image-photo/glass-hot-caramel-macchiato-coffee-260nw-539159449.jpg",
-          "id" : "HangoveMacchiato"
+          "name": "Macchiato",
+          "price": "20.00 ₺",
+          "description": "Espresso, süt ve krema sütle hazırlanır.",
+          "imageUrl": "https://image.shutterstock.com/image-photo/glass-hot-caramel-macchiato-coffee-260nw-539159449.jpg",
+          "id": "HangoveMacchiato"
         }
       ],
       "Soğuk İçecekler": [
@@ -56,6 +56,22 @@
           "imageUrl": "https://thumbs.dreamstime.com/b/cold-brewed-iced-latte-coffee-showing-separate-layer-bottom-as-milk-top-coffee-shot-plastic-glass-oz-isolated-196983009.jpg",
           "id": "HangoverHotLatte"
         }
+      ],
+      "Hamburgerler": [
+        {
+          "name": "Klasik Burger",
+          "price": "36.50 ₺",
+          "description": "Espresso ve soğuk suyla hazırlanır.",
+          "imageUrl": "https://www.sofrakesesi.com/cdn/Iced-Americano.jpg",
+          "id": "HangoverHotAmericano"
+        },
+        {
+          "name": "CheeseBurger",
+          "price": "38.50 ₺",
+          "description": "Espresso, süt, süt köpüğü ve buzla hazırlanır.",
+          "imageUrl": "https://thumbs.dreamstime.com/b/cold-brewed-iced-latte-coffee-showing-separate-layer-bottom-as-milk-top-coffee-shot-plastic-glass-oz-isolated-196983009.jpg",
+          "id": "HangoverHotLatte"
+        }
       ]
     }
   },
@@ -68,5 +84,23 @@
       "restaurantId": "Hangover12345",
       "restaurantName": "Kahve Dünyası"
     }
+  },
+  "BASKET_DATABASE": {
+    "BASKET" : [
+      {
+        "name": "Klasik Burger",
+        "price": "36.50 ₺",
+        "description": "Espresso ve soğuk suyla hazırlanır.",
+        "imageUrl": "https://www.sofrakesesi.com/cdn/Iced-Americano.jpg",
+        "id": "HangoverHotAmericano"
+      },
+      {
+        "name": "Kola",
+        "price": "16.50 ₺",
+        "description": "Espresso ve soğuk suyla hazırlanır.",
+        "imageUrl": "https://www.sofrakesesi.com/cdn/Iced-Americano.jpg",
+        "id": "HangoverHotAmericano"
+      }
+    ]
   }
 }
