@@ -1,5 +1,7 @@
 package com.example.bimenu2.fragment.homepage
 
+import android.app.Dialog
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bimenu2.Constants
+import com.example.bimenu2.LDSProgressDialog
 import com.example.bimenu2.R
 import com.example.bimenu2.adapter.HomePageAdapter
 import com.example.bimenu2.databinding.FragmentHomePageBinding
@@ -46,14 +49,18 @@ class HomePageFragment : Fragment(),
 
         return binding.root
     }
-
+    private var progressDialog: Dialog? = null
     private fun fillRecycler() {
         isFirstRun = true
         val adapter = HomePageAdapter(menuOptionModelList, this)
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         binding.recycler.adapter = adapter
     }
-
+    fun startProgress(context: Context) {
+        if (progressDialog == null)
+            progressDialog = LDSProgressDialog.show(context, null)
+        progressDialog?.show()
+    }
 
     override fun onHomePageItemClicked(menuOptionModel: MenuOptionModel) {
         val test = hashMap[menuOptionModel.optionName]
@@ -63,6 +70,7 @@ class HomePageFragment : Fragment(),
                 lastMenuList.add(i)
             }
         }
+        startProgress(requireContext())
         val action =
             HomePageFragmentDirections.actionHomePageFragment2ToHomePageDetailFragment(
                 lastMenuList,
